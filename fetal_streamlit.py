@@ -138,17 +138,17 @@ if predict_button:
         var11, var12, var13, var14, var15, var16, var17, var18, var19,
         var20, var21
     ]]
-model = load_model()
-result = model.predict(arr)
-fetal_labels = {1.0: "Normal", 2.0: "Suspect", 3.0: "Pathological"}
-predicted_class = result[0]
-fetal_status = fetal_labels.get(predicted_class, "Unknown")
+    model = load_model()
+    result = model.predict(arr)
+    fetal_labels = {1.0: "Normal", 2.0: "Suspect", 3.0: "Pathological"}
+    predicted_class = result[0]
+    fetal_status = fetal_labels.get(predicted_class, "Unknown")
 
-if fetal_status == "Normal":
+    if fetal_status == "Normal":
         st.success(f"The predicted fetal health is: **{fetal_status}**")
-elif fetal_status == "Suspect":
+    elif fetal_status == "Suspect":
         st.warning(f"The predicted fetal health is: **{fetal_status}**")
-else:
+    else:
         st.error(f"The predicted fetal health is: **{fetal_status}**")
 predict_button = st.button("Predict fetal health")
 
