@@ -15,7 +15,7 @@ st.info(
 )
 
 st.markdown(
-    "📊 **Dataset Summary:** 2,126 Records &nbsp;|&nbsp; 3 Classes (Normal, Suspect, Pathological) &nbsp;|&nbsp; 21 Features &nbsp;|&nbsp; 85.92% Accuracy &nbsp;|&nbsp; Medical Disclaimer & Read Sign Acknowledgment"
+    "📊 **Dataset Summary:** 1,061 Records &nbsp;|&nbsp; 3 Classes (Normal, Suspect, Pathological) &nbsp;|&nbsp; 21 Features &nbsp;|&nbsp; 85.92% Accuracy &nbsp;|&nbsp; Medical Disclaimer & Read Sign Acknowledgment"
 )
 with st.expander("📖 Read Full Dataset Background & Citation"):
   st.markdown("""
@@ -155,8 +155,8 @@ predict_button = st.button("Predict fetal health")
 
 
 with st.expander("Dataset"):
-    st.write("The dataset contains 2,126 records with 21 features and 3 classes (Normal, Suspect, Pathological).")
-    st.write("You can explore the dataset below:")
+    st.write("The dataset contains 1,061 records with 21 features and 3 classes (Normal, Suspect, Pathological).")
+    st.write("You can explore the 30 data of dataset below:")
     st.dataframe(df.head(30))
 
 with st.expander (" Cardiotocograms (CTGs)", expanded = True):
