@@ -85,7 +85,7 @@ with st.expander("View confusion score Table"):
 st.subheader("Patient Cardiotocography (CTG) Input Form")
 st.markdown("Please enter the clinical parameters below or expand sections to adjust details.")
 
-# Grouping inputs inside logical expanders to reduce visual clutter
+
 with st.expander("1. Baseline & Heart Rate Metrics", expanded=True):
     col1, col2 = st.columns(2)
     with col1:
@@ -159,7 +159,10 @@ with st.expander("Dataset"):
     st.write("You can explore the dataset below:")
     st.dataframe(df.head(30))
 
-st.subheader(" Cardiotocograms (CTGs)")
-st.image("image_fx-20.webp", caption="Cardiotocograms (CTGs)", width=400)
+with st.expander (" Cardiotocograms (CTGs)", expanded = True):
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image("image_fx-20.webp", caption="Cardiotocograms (CTGs)", width=400)
 
-st.image ("ctg.jpg", caption="Cardiotocograms (CTGs)", width=400)
+    with col2:
+        st.image("ctg.jpg", caption="Cardiotocograms (CTGs)", width=400)
