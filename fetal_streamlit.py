@@ -50,6 +50,9 @@ st.success("Disclaimer accepted. You can now run your predictions.")
 
 df=pd.read_csv('fetal_health_cleaned.csv')
 df.columns=df.columns.str.strip()
+logo_path = "parami.jpg"
+if os.path.exists(logo_path):
+    st.sidebar.image(logo_path, width=150)
 st.sidebar.markdown("**Student Name:** Thorn Phyo Wai Yan")
 st.sidebar.markdown("**Student ID:** PIUS-20240076")
 def load_model():
@@ -57,9 +60,6 @@ def load_model():
         model = pickle.load(f)
     return model
 
-logo_path = "parami.jpg"
-if os.path.exists(logo_path):
-    st.sidebar.image(logo_path, width=150)
 
 data = {
     "Model": ["Logistic Regression"],
@@ -160,9 +160,7 @@ with st.expander("Dataset"):
     st.dataframe(df.head(30))
 
 with st.expander (" Cardiotocograms (CTGs)", expanded = True):
-    col1, col2 = st.columns(2)
-    with col1:
-        st.image("image_fx-20.webp", caption="Cardiotocograms (CTGs)", width=400)
+    
+    st.image("image_fx-20.webp", caption="Cardiotocograms (CTGs)", width=400)
 
-    with col2:
-        st.image("ctg.jpg", caption="Cardiotocograms (CTGs)", width=400)
+    st.image("ctg.jpg", caption="Cardiotocograms (CTGs)", width=400)
